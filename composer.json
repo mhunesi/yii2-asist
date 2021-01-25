@@ -1,0 +1,23 @@
+{
+    "name": "mhunesi/yii2-asist",
+    "description": "Yii2 Asist BT SMS Service Component",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mustafa Hayri ÜNEŞİ",
+            "email": "mhunesi@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-soap": "*",
+        "ext-dom": "*",
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mhunesi\\asist\\": ""
+        }
+    }
+}
