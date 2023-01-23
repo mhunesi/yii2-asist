@@ -48,6 +48,7 @@ class AsistExceptions extends \yii\base\Exception
         -23 => 'Kullanıcı yetkisi bulunmamaktadır.',
         -24 => 'Belirtilen paket zaten onaylanmıştır.',
         -25 => 'Belirtilen Id için onaylanmamış bir paket bulunamadı.',
+        -26 => 'Sözleşme süresi doldu veya limit yetersiz.',
         -1000 => 'SYSTEM_ERROR',
     ];
 
