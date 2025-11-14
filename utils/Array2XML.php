@@ -101,7 +101,7 @@ class Array2XML
     {
         $sequential = $this->isArrayAllKeySequential($value);
         if (! is_array($value)) {
-            $value = htmlspecialchars($value);
+            $value = htmlspecialchars((string)$value);
             $value = $this->removeControlCharacters($value);
             $element->nodeValue = $value;
             return;
@@ -111,7 +111,7 @@ class Array2XML
                 if (($key === '_attributes') || ($key === '@attributes')) {
                     $this->addAttributes($element, $data);
                 } elseif ((($key === '_value') || ($key === '@value')) && is_string($data)) {
-                    $element->nodeValue = htmlspecialchars($data);
+                    $element->nodeValue = htmlspecialchars((string)$data);
                 } elseif ((($key === '_cdata') || ($key === '@cdata')) && is_string($data)) {
                     $element->appendChild($this->document->createCDATASection($data));
                 } elseif ((($key === '_mixed') || ($key === '@mixed')) && is_string($data)) {
@@ -173,11 +173,11 @@ class Array2XML
     protected function addSequentialNode(DOMElement $element, $value)
     {
         if (empty($element->nodeValue)) {
-            $element->nodeValue = htmlspecialchars($value);
+            $element->nodeValue = htmlspecialchars((string)$value);
             return;
         }
         $child = new DOMElement($element->tagName);
-        $child->nodeValue = htmlspecialchars($value);
+        $child->nodeValue = htmlspecialchars((string)$value);
         $element->parentNode->appendChild($child);
     }
     /**
